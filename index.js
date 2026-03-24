@@ -5,6 +5,7 @@
  */
 function sum(a, b) {
   // TODO: Implement this function.
+  return a + b;
 }
 
 /**
@@ -13,6 +14,11 @@ function sum(a, b) {
  */
 function reverseString(str) {
   // TODO: Implement this function.
+  let reversed = '';
+for (let i = str.length - 1; i >= 0; i--) {
+  reversed += str[i];
+}
+return reversed;
 }
 
 /**
@@ -21,6 +27,15 @@ function reverseString(str) {
  */
 function findLargest(numbers) {
   // TODO: Implement this function.
+ if (numbers.length === 0) return null;
+
+let largest = numbers[0];
+for (let num of numbers) {
+  if (num > largest) {
+    largest = num;
+  }
+}
+return largest;
 }
 
 /**
@@ -31,6 +46,14 @@ function findLargest(numbers) {
  */
 function isPalindrome(str) {
   // TODO: Implement this function.
+let lower = str.toLowerCase();
+let reversed = '';
+
+for (let i = lower.length - 1; i >= 0; i--) {
+  reversed += lower[i];
+}
+
+return lower === reversed;
 }
 
 /**
@@ -39,6 +62,15 @@ function isPalindrome(str) {
  */
 function filterEvenNumbers(numbers) {
   // TODO: Implement this function.
+let result = [];
+
+for (let num of numbers) {
+  if (num % 2 === 0) {
+    result.push(num);
+  }
+}
+
+return result;
 }
 
 
@@ -50,4 +82,5 @@ module.exports = {
   isPalindrome,
   filterEvenNumbers,
 };
+
 
